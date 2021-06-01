@@ -14,9 +14,9 @@ module.exports = {
         const { nome, valor, tipo } = req.body;
         await produto.create({ nome, valor, tipo }).then((produto) => {
             req.flash('msg',produto.nome + ' foi adicionado com sucesso!')
-            req.redirect('admim/produtdo/add');
+            res.redirect('admim/produtdo/add');
         }, (err) => {
-            req.flash('msg', "problema ao adicionar o produto " + produto.nome)
+            req.flash('msg', "problema ao adicionar o produto ")
             res.redirect('/admim/produto/add');
         });
     },
